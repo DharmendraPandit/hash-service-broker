@@ -1,0 +1,11 @@
+1) cf create-service-broker hashServiceBrokernew dharam test123 https://hashservicebrokernew.cfapps.io/ --space-scoped
+cf rename-service-broker hashServiceBrokernew hashServiceBrokerNew
+cf service-brokers
+
+cf service-access
+cf enable-service-access hash-new - to make public access
+cf disable-service-access hash-new
+
+2) cf create-service hash-new basic hash-service-broker
+
+cf bind-service hashServiceBrokerClient hash-service-broker
